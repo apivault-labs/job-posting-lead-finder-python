@@ -3,7 +3,7 @@ JobLeadFinderClient — synchronous wrapper around the Apify
 ``apivault_labs/apify-actor-job-leads`` actor (v1.2).
 
 The actor handles all heavy work on Apify infrastructure:
-  - Multi-source fan-out (Indeed + LinkedIn + opt-in Glassdoor) via Thunderbit
+  - Multi-source fan-out across the selected public job boards
   - Cross-source dedup by company+title+city fingerprint
   - 12-layer enrichment: salary parser (7 currencies + FX),
     skills extraction (225 tech / 15 soft / 18 certifications),
@@ -130,7 +130,6 @@ class JobLeadFinderClient:
         write_summary: bool = True,
         top_n: int = 20,
         # Plumbing
-        thunderbit_retries: int = 1,
         max_concurrency: int = 3,
         timeout_per_source: int = 120,
         actor_timeout_secs: int = 600,
@@ -204,7 +203,6 @@ class JobLeadFinderClient:
             "exportFormat": export_format,
             "writeSummary": bool(write_summary),
             "topN": max(5, min(100, int(top_n))),
-            "thunderbitRetries": max(0, min(3, int(thunderbit_retries))),
             "maxConcurrency": max(1, min(5, int(max_concurrency))),
             "timeout": max(30, min(300, int(timeout_per_source))),
         }
