@@ -351,7 +351,7 @@ pip install git+https://github.com/apivault-labs/job-posting-lead-finder-python@
 3. Either pass it explicitly or export `APIFY_API_TOKEN`:
 
 ```bash
-export APIFY_API_TOKEN="apify_api_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export APIFY_API_TOKEN="YOUR_APIFY_TOKEN"
 ```
 
 ```python
@@ -430,7 +430,7 @@ your_code → JobLeadFinderClient → Apify API
             ┌────────────────┬───────┴──────────┐
         Indeed              LinkedIn         Glassdoor (opt-in)
             ↓                  ↓                  ↓
-            └──── Thunderbit (rendering) ─────────┘
+            └──── Hosted Actor collection ──────────────┘
                                      ↓
               Cross-source dedup by company+title+city
                                      ↓
@@ -475,8 +475,9 @@ A: Use `export_format="csv"`. See
 [`examples/crm_csv_export.py`](examples/crm_csv_export.py).
 
 **Q: Will I get blocked / banned?**
-A: All scraping happens on Apify infrastructure via Thunderbit's
-whitelisted pool. Your IP is never touched.
+A: The SDK only calls the hosted Apify Actor and reads its Dataset.
+Collection runs remotely, so your local IP and accounts are not used by
+this client.
 
 **Q: How is this better than Apollo / ZoomInfo / RocketReach?**
 A: Pay-as-you-go ($0.003/job vs $99-300+/mo subscription). Real-time
