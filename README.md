@@ -521,3 +521,16 @@ for the full lists:
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Job Leads Scraper — Bulk LinkedIn & Indeed API on Apify](https://apify.com/apivault_labs/apify-actor-job-leads).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/apify-actor-job-leads/pricing).
+- [n8n community package: n8n-nodes-apivault-job-leads](https://www.npmjs.com/package/n8n-nodes-apivault-job-leads).
+- [Python client](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-job-leads).
+- [n8n source and usage](https://github.com/apivault-labs/n8n-nodes-apivault-job-leads).
+- [n8n source and usage](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-job-leads).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->
